@@ -17,6 +17,10 @@ export const Navbar = () => {
     router.push("/");
   };
 
+  const onLoginPress = () => {
+    router.push("/account/login");
+  };
+
   return (
     <div className="bg-gray-900 w-full md:flex items-center justify-between py-4 md:px-10 px-7">
       <div
@@ -26,17 +30,17 @@ export const Navbar = () => {
         <span>
           <LaptopOutlined className="text-5xl text-white mr-2" />
         </span>
-        Logo
+        <p>Logo</p>
       </div>
 
       <div className="flex">
         <input
           type="text"
           placeholder="Searching Product"
-          className="pl-2 rounded-xl w-[300px] h-[30px] bg-gray-600 text-white"
+          className="pl-2 rounded-xl w-[300px] h-[30px] bg-gray-600 text-white placeholder:text-gray-300"
         />
         <span className="">
-          <SearchOutlined className="ml-[-20px] pb-1" />
+          <SearchOutlined className="ml-[-20px] pb-1 text-gray-300" />
         </span>
       </div>
 
@@ -54,7 +58,10 @@ export const Navbar = () => {
       </ul>
 
       <div className="">
-        <button className="bg-white rounded-3xl w-[80px] h-[40px] text-xl hover:bg-gray-400 duration-500">
+        <button
+          className="bg-white rounded-3xl w-[80px] h-[40px] text-xl hover:bg-gray-400 duration-500"
+          onClick={onLoginPress}
+        >
           Login
         </button>
       </div>

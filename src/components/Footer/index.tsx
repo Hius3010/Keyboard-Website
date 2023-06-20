@@ -19,7 +19,7 @@ export const Footer = () => {
 
           <ul className="flex flex-col gap-y-3">
             <li className="text-sm text-gray-400 hover:text-yellow-500 cursor-pointer duration-500">
-              Home page
+              <a href="/">Home page</a>
             </li>
             <li className="text-sm text-gray-400 hover:text-yellow-500 cursor-pointer duration-500">
               About us
@@ -36,7 +36,7 @@ export const Footer = () => {
         <div className="flex flex-col gap-y-8">
           <h4 className="font-bold">DISCOUNT INFORMATION</h4>
 
-          <div className="flex r">
+          <div className="flex">
             <input
               type="text"
               placeholder="Enter your email"

@@ -1,5 +1,4 @@
 "use client";
-
 import { Carousel } from "antd";
 
 const contentStyle: React.CSSProperties = {
@@ -11,7 +10,10 @@ const contentStyle: React.CSSProperties = {
 export const HomeBanner = () => {
   return (
     <div className="h-[463px] w-full">
-      <Carousel autoplay>
+      <Carousel 
+      autoplay 
+      arrows={true}
+      >
         <div className="bg-white">
           <img
             src="https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1400/https://akko.vn/wp-content/uploads/2023/04/5075B-Plus-goku-naruto-1400x510.jpg"
