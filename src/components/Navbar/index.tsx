@@ -1,7 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { LaptopOutlined, SearchOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faKeyboard } from "@fortawesome/free-regular-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -9,7 +13,7 @@ export const Navbar = () => {
   const Links = [
     { name: "KEYBOARD", link: "/shop" },
     { name: "KEYCAP", link: "/shop" },
-    { name: "SWITCH", link: "/shop" },
+    { name: "SWITCHES", link: "/shop" },
     { name: "ACCESSORIES", link: "/shop" },
   ];
 
@@ -21,27 +25,37 @@ export const Navbar = () => {
     router.push("/account/login");
   };
 
+  const [search, setSearch] = useState("");
+  const onSearchPress = () => {
+    console.log({ search });
+  };
+
   return (
-    <div className="bg-gray-900 w-full md:flex items-center justify-between py-4 md:px-10 px-7">
+    <div className="bg-gray-900 h-[100px] w-full md:flex items-center justify-between py-4 md:px-10 px-7">
       <div
         className="font-bold text-4xl cursor-pointer flex items-center text-white"
         onClick={onLogoPress}
       >
-        <span>
-          <LaptopOutlined className="text-5xl text-white mr-2" />
-        </span>
+        <FontAwesomeIcon icon={faKeyboard as IconProp} className="pr-4" />
         <p>Logo</p>
       </div>
 
-      <div className="flex">
+      <div className="flex rounded-full w-[260px] h-[35px] bg-gray-600">
         <input
           type="text"
           placeholder="Searching Product"
-          className="pl-2 rounded-xl w-[300px] h-[30px] bg-gray-600 text-white placeholder:text-gray-300"
+          className=" text-white placeholder:text-gray-300 bg-gray-600 rounded-l-full outline-none pl-3"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <span className="">
-          <SearchOutlined className="ml-[-20px] pb-1 text-gray-300" />
-        </span>
+        <button className="items-center rounded-r-full">
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass as IconProp}
+            className="text-white"
+            title="Search"
+            onClick={onSearchPress}
+          />
+        </button>
       </div>
 
       <ul className="md:flex md:items-center">
@@ -59,7 +73,7 @@ export const Navbar = () => {
 
       <div className="">
         <button
-          className="bg-white rounded-3xl w-[80px] h-[40px] text-xl hover:bg-gray-400 duration-500"
+          className="bg-white rounded-3xl w-[130px] h-[50px] text-xl font-bold hover:bg-gray-400 duration-500"
           onClick={onLoginPress}
         >
           Login

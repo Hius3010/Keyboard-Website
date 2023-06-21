@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <main>
       <div className="w-full h-full">
-        <div className="h-full w-full justify-center grid grid-cols-3 px-80 py-10">
+        <div className="h-full w-full justify-center grid grid-cols-3 px-80 py-20">
           <div className="w-full h-full bg-gray-300 py-10 col-span-2 border-solid border-2 border-black">
             <form
               className="flex flex-col px-10 gap-y-4"
